@@ -283,7 +283,7 @@ declare namespace D365 {
         /**
          * Devuelve la ventana de contenido que representa un IFRAME o un recurso web.
          */
-        getContentWindow(): Promise;
+        getContentWindow(): Promise<any>;
 
         /**
          * Obtiene un control en el formulario.
