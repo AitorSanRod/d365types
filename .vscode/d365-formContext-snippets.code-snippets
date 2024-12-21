@@ -1,0 +1,9 @@
+{
+    "getAttribute con valor vacío": {
+        "prefix": "getAttribute",
+        "body": [
+            "getAttribute(\"\")"
+        ],
+        "description": "Inserta getAttribute con un valor predeterminado vacío"
+    }
+}
