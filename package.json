@@ -1,5 +1,19 @@
 {
+  "name": "d365types",
+  "version": "1.0.1",
+  "description": "Paquete de ayuda para el desarrollo de aplicaciones de d365 con JS.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "devDependencies": {
     "@types/xrm": "^9.0.81"
-  }
+  },
+  "files": [
+    "helloWorld.js",
+    "types",
+    ".vscode"
+  ],
+  "keywords": ["dynamics", "d365", "powerapps", "powerplatform"],
+  "author": "Aitor Sánchez Rodríguez",
+  "license": "ISC"
 }
