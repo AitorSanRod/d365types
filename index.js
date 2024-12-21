@@ -3,8 +3,7 @@
  * @param {D365.ExecutionContext} executionContext
  */
 
-function data(executionContext) {
-    let formContext = executionContext.getFormContext();
-
-    formContext.getControl("").addCustomFilter(xmlFilter, entityLogicalName)
+function OnLoad(executionContext) {
+    const formContext = executionContext.getFormContext();
+    const name =  formContext.getAttribute("name").getValue();
 }

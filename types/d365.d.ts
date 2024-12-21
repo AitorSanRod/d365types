@@ -95,7 +95,7 @@ declare namespace D365 {
         /**
          * Devuelve un array de objetos de opción que representan opciones válidas para una columna.
          */
-        getOptions(): Array
+        getOptions(): Array<T>
 
         /**
          * TODO
@@ -115,7 +115,7 @@ declare namespace D365 {
         /**
          * Devuelve el objeto de opción o una matriz de objetos de opción seleccionados en una columna choice o choices respectivamente.
          */
-        getSelectedOption(): object | Array;
+        getSelectedOption(): object | Array<T>;
 
         /**
          * Devuelve una cadena que indica cuándo se enviarán los datos de la columna a la hora de guardar el registro.
@@ -201,12 +201,119 @@ declare namespace D365 {
          */
         addCustomFilter(xmlFilter: string, entityLogicalName: string): void;
 
-        
+        /**
+         * Agrega una vista nueva para el cuadro de diálogo de búsqueda.
+         * 
+         * @param viewId String. GUID de una vista. Por ejemplo “00000000-0000-0000-0000-000000000001".
+         * @param entityName String. Nombre de la tabla.
+         * @param viewDisplayName String. Nombre de la vista.
+         * @param fetchXml String. Consulta XML de la vista.
+         * @param layoutXml String. El XML que define el diseño de la vista.
+         * @param isDefault Boolean. Indica si la vista debe ser la vista predeterminada.
+         */
+        addCustomView(viewId: string, entityName: string, viewDisplayName: string, fetchXml: string, layoutXml: string, isDefault: boolean): void;
+
+        /**
+         * Muestra una notificación de error o de recomendación para un control, y permite especificar acciones para ejecutar basadas en la notificación.
+         * 
+         * @param notification messages: Array<string> | notificationLevel: string | uniqueId: string | actions?: Array<object>
+         */
+        addNotification(notification: INotificacion): boolean;
+
+        /**
+         * Ejecuta una funcion al hacer clic en el calor de un lookUp.
+         *  
+         */
+        addOnLookupTagClick(funcion: () => any): any;
+
+        /**
+         * TODO
+         */
+        addOnOutputChange(funcion: () => any): any;
+
+        /**
+         * TODO
+         */
+        addOnPostSearch(funcion: () => any): any;
+
+        /**
+         * TODO
+         */
+        addOnResultOpened(funcion: () => any): any;
+
+        /**
+         * TODO
+         */
+        addOnSelection(funcion: () => any): any;
+
+        /**
+         * Agrega una opción a un control.
+         * 
+         * @param option Object. La opción a agregar.
+         * @param index Number. La posición en la que aparecerá el nuevo valor. Si no se añade, se agrega al final.
+         */
+        addOption(option: object, index?: number): void;
+
+        /**
+         * Aplica cambios a búsquedas basadas en valores actuales mientras el usuario está a punto de ver los resultados de la búsqueda.
+         * 
+         * @param funcion 
+         */
+        addPreSearch(funcion: () => any): any;
+
+        /**
+         * Eliminar un mensaje que ya se muestra para un control.
+         * 
+         * @param uniqueId String. Si no se establece parametro, quita la notificación actual.
+         */
+        clearNotification(uniqueId?: string): boolean;
+
+        /**
+         * Borra todas las opciones de un control.
+         */
+        clearOptions(): void;
+
+        /**
+         * Devuelve la columna a la que está asignada el control.
+         * 
+         * @returns object: Objecto con los datos de la columna del control.
+         */
+        getAttribute(): object;
+
+        /**
+         * Devuelve la ventana de contenido que representa un IFRAME o un recurso web.
+         */
+        getContentWindow(): Promise;
+
+        /**
+         * Obtiene un control en el formulario.
+         * 
+         * @param arg String | number
+         * @returns Object | Array<object> | null
+         */
+        getControl(arg?: string): object | Array<object> | null;
+
+        /**
+         * Devuelve un valor que categoriza los controles.
+         */
+        getControlType(): string;
+
+        /**
+         * Devuelve el valor del parámetro de la cadena de consulta de datos pasado a un recurso web de Silverlight.
+         */
+        getData(): string;
     }
 
     interface FieldValue {
         value: IFieldValue
     }
 
-    type IFieldValue = string | number | boolean | object | Array | null;
+    type IFieldValue = string | number | boolean | object | Array<any> | null;
+
+    type INotificacion = {
+        messages: Array<string>,
+        notificationLevel: string,
+        uniqueId: string,
+        actions?: Array<object>
+    }
 }
