@@ -2752,7 +2752,7 @@ declare namespace Xrm {
              * Gets the value.
              * @returns The value.
              */
-            getValue(): T | null;
+            getValue(value: string): T | null;
 
             /**
              * Sets the value.
