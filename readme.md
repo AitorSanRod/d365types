@@ -22,21 +22,17 @@ Para añadir al archivo JS los tipados y el autocompletado del paquete hay que a
 
 ```
 /// <reference path="types/d365.d.ts" />
-/**
- * @param {D365.ExecutionContext} executionContext
- */
 ```
 
 ### 🚀 Uso en funciones
 
-Para hacer uso de las ayudas del paquete es necesario que las funciones a las que pasamos el executionContext de D365 tengan como nombre del parametro principal executionContext:
+Para hacer uso de las ayudas del paquete es necesario que las funciones a las que pasamos el executionContext de D365 tengan como nombre del parametro principal executionContext
+y se añada el comentario siguiente sobre cada funcion que haga uso del paquete:
 
 ```
-/// <reference path="types/d365.d.ts" />
 /**
  * @param {D365.ExecutionContext} executionContext
  */
-
 function OnLoad(executionContext) {
     const formContext = executionContext.getFormContext();
     const name =  formContext.getAttribute("name").getValue();
