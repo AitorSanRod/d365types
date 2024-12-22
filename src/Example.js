@@ -5,5 +5,5 @@
  */
 function Example(executionContext) {
     const formContext = executionContext.getFormContext();
-    const name =  formContext.getAttribute("name").getValue();
+    const name =  formContext.getControl("")
 }

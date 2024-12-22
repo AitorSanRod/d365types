@@ -302,6 +302,240 @@ declare namespace D365 {
          * Devuelve el valor del parámetro de la cadena de consulta de datos pasado a un recurso web de Silverlight.
          */
         getData(): string;
+
+        /**
+         * Devuelve el valor de identificador de la vista predeterminada.
+         */
+        getDefaultView(): string;
+
+        /**
+         * Devuelve si el control está deshabilitado.
+         */
+        getDisabled(): boolean;
+
+        /**
+         * Obtiene los tipos de tablas permitidos en el control de búsqueda.
+         * 
+         * @returns Array<string> con los nombres lógicos de las tablas permitidas en este control.
+         */
+        getEntityTypes(): Array<string>;
+
+        /**
+         * Devuelve la dirección URL predeterminada que un control de IFRAME está configurado para mostrar.
+         * 
+         * @returns String. Dirección URL inicial.
+         */
+        getInitialUrl(): string;
+
+        /**
+         * Devuelve la etiqueta del control.
+         * 
+         * @returns String: La etiqeuta del control.
+         */
+        getLabel(): string;
+
+        /**
+         * Devuelve el nombre asignado al control.
+         */
+        getName(): string
+
+        /**
+         * Devuelve el objeto del formulario que representa un IFRAME o un recurso web.
+         * 
+         * @returns Iframe: https://developer.mozilla.org/es/docs/Web/HTML/Element/iframe
+         */
+        getObject(): Object;
+
+        /**
+         * Devuelve una matriz de objetos de opción que representan opciones válidas disponibles para un control, 
+         * incluida una opción en blanco y excluida cualquier opción que se haya quitado del control mediante removeOption.
+         * 
+         * @returns Devuelve un array de objetos con los atributos text: string y value: number.
+         */
+        getOptions(): Array<IOptionSet>;
+
+        /**
+         * Devuelve un diccionario de las propiedades de salida del control.
+         */
+        getOutputs(): any;
+
+        /**
+         * Devuelve una referencia al objeto de sección que contiene el control.
+         */
+        getParent(): object;
+
+        /**
+         * Obtiene el texto usado como criterio de búsqueda para el control de administración de knowledge base.
+         */
+        getSearchQuery(): string;
+
+        /**
+         * Use este método para obtener el resultado seleccionado actualmente del control de búsqueda. 
+         * El resultado seleccionado actualmente también representa el resultado que está abierto actualmente.
+         */
+        getSelectedResults(): any;
+
+        /**
+         * Obtenga si un control de fecha muestra la parte de hora de la fecha.
+         */
+        getShowTime(): boolean;
+
+        /**
+         * TODO
+         */
+        getSrc(): string;
+
+        /**
+         * Devuelve el estado del control de temporizador.
+         */
+        getState(): number;
+
+        /**
+         * Obtenga el recuento de resultados que se encuentran en el control de búsqueda.
+         */
+        getTotalResultCount(): number;
+
+        /**
+         * Obtiene el valor más reciente en un control cuando el usuario escribe caracteres en una columna de texto o número específica. 
+         * 
+         * El método getValue (Control) es diferente del método getValue (Attributes) de la columna porque el método de control recupera el valor del control cuando 
+         * el usuario escribe en el control en lugar de en la método getValue de la columna que recupera el valor después de que el usuario confirma (guarda) la columna.
+         */
+        getValue(): string;
+
+        /**
+         * Devuelve un valor que indica si el control está visible actualmente.
+         */
+        getVisible(): boolean;
+
+        /**
+         * Abre un resultado de la búsqueda en el control de búsqueda especificando el número de resultado.
+         * 
+         * @param resultNumber Number. Obligatorio. Valor numérico que especifica el número de resultado que se abrirá. El número de resultado empieza en 1.
+         * @param mode String. Inline | Popout.
+         * 
+         * @returns  Estado de apertura del resultado de la búsqueda especificado. 
+         * Devuelve 1 si es correcto; 0 si es error. El método devolverá -1 si el valor resultNumber especificado no está presente o si el valor mode especificado no es válido.
+         */
+        openSearchResult(resultNumber: number, mode?: string): boolean;
+
+        /**
+         * Actualiza los datos visualizados en un control timelinewall y timer.
+         */
+        refresh(): void;
+
+        /**
+         * Quita un controlador de eventos del evento OnLookupTagClick.
+         */
+        removeOnLookupTagClick(funcion: () => void): void;
+
+        /**
+         * Quita un controlador de eventos del evento OnOutputChange.
+         */
+        removeOnOutputChange(funcion: () => void): void;
+
+        /**
+         * Quita un controlador de eventos del evento PostSearch.
+         */
+        removeOnPostSearch(funcion: () => void): void;
+
+        /**
+         * Quita un controlador de eventos del evento OnResultOpened.
+         */
+        removeOnResultOpened(funcion: () => void): void;
+
+        /**
+         * Quita un controlador de eventos del evento OnSelection.
+         */
+        removeOnSelection(funcion: () => void): void;
+
+        /**
+         * Quita una opción de un control.
+         * 
+         * @param value Number. Valor de la opoción que desea quitar.
+         */
+        removeOption(value: number): void;
+
+        /**
+         * Quita las funciones del controlador de eventos que se han establecido anteriormente para el evento PreSearch.
+         */
+        removePreSearch(funcion: () => void): void;
+
+        /**
+         * Establecer el valor del parámetro de la cadena de consulta de datos pasado a un recurso web de Silverlight.
+         * 
+         * @param string 
+         */
+        setData(string: string): void;
+
+        /**
+         * Establece la vista predeterminada para el cuadro de diálogo de control de búsqueda.
+         * 
+         * @param viewId String. GUID de la vistas que establece como principal.
+         */
+        setDefaultView(viewId: string): void;
+
+        /**
+         * Establece si el control está deshabilitado.
+         * 
+         * @param bool
+         */
+        setDisabled(bool: boolean): void;
+
+        /**
+         * Establece los tipos de tablas permitidos en el control de búsqueda.
+         * 
+         * @param entities Array de strings.
+         */
+        setEntityTypes(entities: Array<string>): void;
+
+        /**
+         * Establece el enfoque en el control.
+         */
+        setFocus(): void;
+
+        /**
+         * Establece la etiquea del control.
+         * 
+         * @param label String. Nueva etiqueta para el control.
+         */
+        setLabel(label: string): void;
+
+        /**
+         * Establecer una notificación de error en un control impedirá que se guarde el formulario.
+         * 
+         * @param message String. 
+         * @param uniqueId String. Opcional.
+         * 
+         * @return Boolean. Indica si el mensaje se ha establecido correctamente.
+         */
+        setNotification(message: string, uniqueId?: string): boolean;
+
+        /**
+         * Establece el texto utilizado como criterio de búsqueda para el control de búsqueda de la knowledge base.
+         */
+        setSearchQuery(funcion: () => void): void;
+
+        /**
+         * Especifique si un control de fecha debe mostrar la parte de hora de la fecha.
+         * 
+         * @param bool 
+         */
+        setShowTime(bool: boolean): void;
+
+        /**
+         * Establece la dirección URL que se muestra en un recurso web o IFRAME.
+         * 
+         * @param URL 
+         */
+        setSrc(URL: string): void;
+
+        /**
+         * Establece un valor que indica si el control está visible.
+         * 
+         * @param bool 
+         */
+        setVisible(bool: boolean): void;
     }
 
     interface FieldValue {
@@ -315,5 +549,10 @@ declare namespace D365 {
         notificationLevel: string,
         uniqueId: string,
         actions?: Array<object>
+    }
+
+    type IOptionSet = {
+        text: string,
+        value: number
     }
 }
