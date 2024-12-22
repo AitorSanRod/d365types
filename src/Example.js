@@ -3,6 +3,7 @@
 /**
  * @param {D365.ExecutionContext} executionContext
  */
-function OnLoadExample(executionContext) {
-    const formContext = executionContext.getFormContext()
+function Example(executionContext) {
+    const formContext = executionContext.getFormContext();
+    const name =  formContext.getAttribute("name").getValue();
 }
