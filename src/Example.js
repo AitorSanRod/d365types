@@ -1,9 +1,8 @@
-/// <reference path="../types/d365.d.ts" />
+/// <reference path="../types/index.d.ts" />
 
 /**
- * @param {D365.ExecutionContext} executionContext
+ * @param {Xrm.Events.EventContext} executionContext
  */
 function Example(executionContext) {
     const formContext = executionContext.getFormContext();
-    const name =  formContext.getAttribute("name").getValue();
 }
