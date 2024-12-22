@@ -1,11 +1,11 @@
 {
   "name": "d365types-clone",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Paquete de ayuda para el desarrollo de aplicaciones de d365 con JS.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "download-repo": "cd ../../ && git clone https://github.com/AitorSanRod/d365types && npm run del",
-    "del": "del node_modules && exit 1",
+    "del": "del /q node_modules && del /q package.json && del /q package-lock.json",
     "postinstall": "npm run download-repo"
   },
   "main": "helloWorld.js",
